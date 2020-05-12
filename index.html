@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'> <!-- displays site properly based on user's device -->
+  <title>Frontend Mentor | Intro component with sign up form</title>
+  <link rel='icon' type='image/png' sizes='32x32' href='assets/images/favicon-32x32.png'>
+  <link rel='stylesheet' href='assets/css/styles.css'>
+</head>
+
+<body>
+
+  <header class='header'>
+    <h1 class='page-title'>Learn to code by watching others</h1>
+    <p class='page-intro'>See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+      but understanding how developers think is invaluable. 
+    </p>
+  </header>
+
+  <main class='main'>
+    <section class='sect-pricing'>
+      <p class='msg-pricing'><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
+    </section>
+    <section class='sect-signup'>
+      <form class='form-signup'>
+        <label class='label-input label-input--fname label--error' data-title='First Name'>
+          <input type='text' id='input-fname' class='input input-fname' placeholder='First Name'>
+        </label>
+        <label class='label-input label-input--lname label--error' data-title='Last Name'>
+          <input type='text' id='input-lname' class='input input-lname' placeholder='Last Name'>
+        </label>
+        <label class='label-input label-input--email label--error' data-title='Email Address'>
+          <input type='email' id='input-email' class='input input-email' placeholder='Email Address'>
+        </label>
+        <label class='label-input label-input--password label--error' data-title='Password'>
+          <input type='password' id='input-password' class='input input-password' placeholder='Password'>
+        </label>
+        <button type='submit' id='btn-submit' class='btn btn-submit'>Claim your free trial</button>
+        <p class='msg-terms'>By clicking the button, you are agreeing to our <a href='#' class='lnk-terms'>Terms and Services</a></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class='footer'>
+    <p class='attribution'>
+      Challenge by <a href='https://www.frontendmentor.io?ref=challenge' target='_blank'>Frontend Mentor</a>. 
+      Coded by <a href='https://www.leshy.net'>Iwan Groeneveld</a>.
+    </p>
+  </footer>
+</body>
+</html>

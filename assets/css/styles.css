@@ -1,0 +1,323 @@
+/* styles.scss
+   Styles for Intro Component With Signup challenge (Newbie) from Frontend Mentor */
+/*  Modern CSS Reset
+    https://github.com/hankchizljaw/modern-css-reset
+*/
+/* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1rem;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Variables */
+:root {
+  --font-size: 16px;
+  --font-sans: "Poppins", "Helvetica", "Arial", sans-serif;
+  --color-text-light: hsl(0, 100%, 99%);
+  --color-primary-1: hsl(0, 100%, 74%);
+  --color-primary-2: hsl(154, 59%, 51%);
+  --color-accent: hsl(248, 32%, 49%);
+  --color-neutral-1: hsl(249, 10%, 26%);
+  --color-neutral-2: hsl(246, 25%, 77%);
+  --border-radius: 0.75rem;
+}
+
+body {
+  padding: 2rem;
+  background-color: var(--color-primary-1);
+  background-image: url("../images/bg-intro-mobile.png");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: auto 100%;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.5px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.header {
+  color: var(--color-text-light);
+  text-align: center;
+  margin: 3rem auto;
+}
+
+.page-title {
+  line-height: 1.25;
+  margin-bottom: 2rem;
+}
+
+.header, .main, .footer {
+  min-width: calc(380px - 4rem);
+  max-width: 35rem;
+}
+
+.main {
+  margin: 0 auto;
+}
+
+.msg-pricing {
+  position: relative;
+  padding: 1rem 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--color-text-light);
+  background-color: var(--color-accent);
+  font-weight: 300;
+  border-radius: var(--border-radius);
+}
+
+.msg-pricing::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0.5rem 0 0 #ddd;
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+
+.form-signup {
+  position: relative;
+  padding: 2rem;
+  background-color: var(--color-text-light);
+  border-radius: var(--border-radius);
+}
+
+.form-signup::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0.5rem 0 0 #ccc;
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+
+.label-input {
+  position: relative;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem;
+  font-weight: 600;
+  background-color: var(--color-text-light);
+  border: 1.5px solid var(--color-neutral-2);
+  border-radius: 0.3rem;
+}
+
+.input:hover, .input:active, .input:focus {
+  border-color: var(--color-neutral-1);
+}
+
+.label--error input {
+  border-color: var(--color-primary-1);
+  padding-right: 3.5rem;
+}
+
+.label--error::after {
+  content: attr(data-title) " cannot be empty";
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  font-style: italic;
+  width: 100%;
+  text-align: right;
+  color: var(--color-primary-1);
+}
+
+.label--error::before {
+  content: url("../images/icon-error.svg");
+  position: absolute;
+  right: 1rem;
+  top: 1.25rem;
+}
+
+.btn {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: var(--color-primary-2);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  letter-spacing: 1px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #71daad;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.3rem;
+  box-shadow: 0 0.25rem 0 0 #2fb67c;
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.msg-terms {
+  text-align: center;
+  font-size: 0.75rem;
+  padding: 0 2rem;
+  color: var(--color-neutral-2);
+  letter-spacing: 0;
+}
+
+.lnk-terms {
+  text-decoration: none;
+  color: var(--color-primary-1);
+  font-weight: 700;
+}
+
+.footer {
+  margin: 2rem auto;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--color-text-light);
+}
+
+.attribution a {
+  color: var(--color-neutral-1);
+  font-weight: 700;
+}
+
+@media screen and (min-width: 375px) {
+  body {
+    background-image: url("../images/bg-intro-desktop.png");
+  }
+}
+@media screen and (min-width: 80rem) {
+  body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-size: cover;
+  }
+
+  .header, .main {
+    margin: 0 2rem;
+  }
+
+  .header {
+    text-align: left;
+  }
+
+  .page-title {
+    font-size: 3rem;
+  }
+
+  .footer {
+    max-width: initial;
+    flex: 0 0 100%;
+    margin: 3rem 0 0;
+  }
+}
