@@ -203,12 +203,16 @@ strong {
   border-color: var(--color-neutral-1);
 }
 
+.input:invalid {
+  box-shadow: none;
+}
+
 .label--error input {
   border-color: var(--color-primary-1);
   padding-right: 3.5rem;
 }
 
-.label--error::after {
+.label--error-msg {
   content: attr(data-title) " cannot be empty";
   display: block;
   margin-top: 0.25rem;
@@ -219,7 +223,7 @@ strong {
   color: var(--color-primary-1);
 }
 
-.label--error::before {
+.label--error::after {
   content: url("../images/icon-error.svg");
   position: absolute;
   right: 1rem;
