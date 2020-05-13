@@ -1,49 +1,46 @@
 /* JavaScript for Intro Component with Signup Form from Frontend Mentor */
 
-/* Attach event handler to submit button */
+// Attach event handler to Submit button
 const submit = document.getElementById("btn-submit");
 submit.addEventListener("click", function(event){
   event.preventDefault();
   checkInput();
 });
 
-/* Validate email address (regex grabbed from emailregex.com) */
+// Function to validate email address (regex grabbed from emailregex.com)
 function isEmail(address){
   const regex = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
   return regex.test(String(address).toLowerCase());
 }
 
-/* Validate input fields */
+// Function to validate inputs
 function checkInput(){
     let errors = false;
   const allFields = document.getElementsByClassName("input");
   for (const field of allFields){
-    field.parentElement.classList.remove("label--error");
+    field.parentElement.classList.remove("label--error");                          // Clear any previous error states and messages
     if (field.nextSibling) field.parentNode.removeChild(field.nextSibling);
-    if (!field.value) {
+    if (!field.value) {                                                            // Check for empty fields
       setState("error", field, "empty");
       errors = true;
     }
   }
-  const emailField = document.getElementsByClassName("input-email");
-  if (!isEmail(emailField[0].value)) {
-    setState("error", emailField[0], "invalid");
+  const emailField = document.getElementsByClassName("input-email")[0];            // Check for valid email address
+  if (!emailField.nextSibling && !isEmail(emailField.value)) {
+    setState("error", emailField, "invalid");
     errors = true;
   }
-  if (!errors) {
+  if (!errors) {                                                                   // Empty input fields on valid submission
     for (const field of allFields){
       field.value = "";
     }
   }
 }
 
-/* Function to set state and error messages */
+// Function to set error state
 function setState(state, element, reason){
   const parent = element.parentElement;
-  if (state == "default"){
-    parent.classList.remove("label--error");
-  }
-  else if (state == "error") {
+  if (state == "error") {
     const errorSpan = document.createElement("span");
       let errorMsg = "";
 
